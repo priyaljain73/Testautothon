@@ -1,6 +1,12 @@
-TestathonProj/pages/DictionaryPage.class
+TestathonProj/pages/LoginPage.class
+TestathonProj/steps/MultiPlatformSteps.class
 Driver/MyChromeDriver.class
+TestathonProj/api/TestApi.class
+TestathonProj/pages/DictionaryPage.class
 TestathonProj/steps/DefinitionSteps.class
+TestathonProj/steps/serenity/LoginStepDef.class
+TestathonProj/steps/LoginSteps.class
+TestathonProj/api/LoginApi.class
 TestathonProj/steps/serenity/EndUserSteps.class
 TestathonProj/steps/SearchSteps.class
 CucumberRunner.class
