@@ -27,6 +27,9 @@ import java.util.stream.Collectors;
     @FindBy(name="btnK")
     private WebElementFacade searchButton;
 
+    @FindBy(xpath = "//*[@id=\"resultStats\"]")
+    private WebElementFacade searchResultCount;
+
     public void enter_keywords(String keyword) {
       getDriver().manage().window().fullscreen();
       searchTextBox.type(keyword);
@@ -40,6 +43,10 @@ import java.util.stream.Collectors;
 
     public String checkTitle(){
       return getDriver().getTitle();
+    }
+
+    public String getSearchResultCount(){
+      return searchResultCount.getText();
     }
 
 }

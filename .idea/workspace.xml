@@ -1,7 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18fc16f2-0db4-46e8-8f30-9200bfa65190" name="Default Changelist" comment="" />
+    <list default="true" id="18fc16f2-0db4-46e8-8f30-9200bfa65190" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestathonProj/api/TestApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestathonProj/steps/MultiPlatformSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/composite_feature/MultiFeature.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CucumberRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CucumberRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestathonProj/pages/GoogleSearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestathonProj/pages/GoogleSearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestathonProj/steps/serenity/EndUserSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestathonProj/steps/serenity/EndUserSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TestathonProj-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestathonProj-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/destination/cucumber.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/destination/cucumber.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/CucumberRunner.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/failsafe-reports/CucumberRunner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/TEST-CucumberRunner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/failsafe-reports/TEST-CucumberRunner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/failsafe-reports/failsafe-summary.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/06601d242a21763420b3c1a566641f99261d3551ba081f4a9899c15d5c998aad.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/06601d242a21763420b3c1a566641f99261d3551ba081f4a9899c15d5c998aad.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/069bb8358e716185999d53f76b1187a15bbd002399790b2c586ab1b8a4348b96.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/069bb8358e716185999d53f76b1187a15bbd002399790b2c586ab1b8a4348b96.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/0810e4a135221c8f821c278d4ccb14e20013cec6ce024566770e7f155c3706a2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/0c8aa8d94608bfc0974ed6f56d991b162c94b28576c603c3a991d1654b689d10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/0c8aa8d94608bfc0974ed6f56d991b162c94b28576c603c3a991d1654b689d10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/0dba800ede7a96d03db25dcb83d2993e8ce80c0f8d842c08ac88cd44a8f9b277.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/16eed6480007660bc10e8786ee39421621b6f88febc9da99720d08b307f9b3d6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/19368dd3dd2daf6e0aeabbe0bd62d6aa8fa01c6243461a3cf14fd70dc9d375b4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/19368dd3dd2daf6e0aeabbe0bd62d6aa8fa01c6243461a3cf14fd70dc9d375b4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/1a523d3d1f36c01e8c40ff9e63d1d251a5141a49ca9bd40cc7d06ec8351f2d70.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/1a523d3d1f36c01e8c40ff9e63d1d251a5141a49ca9bd40cc7d06ec8351f2d70.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/1b36042f471fc0203ee2ef38f9f06da874200cbde11a3641079e04403aaf7160.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/266bf1a788512eb5a7e97c636fc97ba7a20e7976b8b1de53209dd44e36e76ee8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/2be5ac36aac02eaac6da56df2abb044d58653b7638254013c6204b5503d77252.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/37c16caf1a318ec285566c601e1dd79cc1e3fb1e7797f46413ad59c2607b5956.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/3b61449aa1699ec22b150d6467be27fc05dff7b0aaf98f993e0d9a9c416993a9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/3b61449aa1699ec22b150d6467be27fc05dff7b0aaf98f993e0d9a9c416993a9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/3be3c9d79a831a87d371b8f1b0a29afcdd41602e1d358fd63fd1e311ec8b8f0a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/3f2eb02b84915919e645bc1d661db798c9551b3b7917c98aa2b542e20b74c12a.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/3f2eb02b84915919e645bc1d661db798c9551b3b7917c98aa2b542e20b74c12a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/3f2eb02b84915919e645bc1d661db798c9551b3b7917c98aa2b542e20b74c12a_screenshots.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/44275d9f9111ed8f021935f8223474ad05159345316b8d05e4983f1519a1b67c.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/44275d9f9111ed8f021935f8223474ad05159345316b8d05e4983f1519a1b67c.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/44275d9f9111ed8f021935f8223474ad05159345316b8d05e4983f1519a1b67c.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/44275d9f9111ed8f021935f8223474ad05159345316b8d05e4983f1519a1b67c.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/46ed774b310e5ed193ba2a2cec79ac1512e8cf41cd0e8fd4d2805f516cdaa74b.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/46ed774b310e5ed193ba2a2cec79ac1512e8cf41cd0e8fd4d2805f516cdaa74b.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/48091b933acafc0961170e3a672433e245992a5f4070e8c237b1e044e9600e54.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/48091b933acafc0961170e3a672433e245992a5f4070e8c237b1e044e9600e54.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/497975c084e6d1dca70af627bfab84c1e8ea7cea8c4f70b3514a5086f9ea585b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/4ba76f9788e578362faf7e22e8be079915eef2c74562691646b401fe8e043c29.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/5252cac5399b2ef91dfb611160e5391a6c743030c99a4e5c95026074e4ab5330.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/5252cac5399b2ef91dfb611160e5391a6c743030c99a4e5c95026074e4ab5330.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/5cdcd246a528ac57c62f124bc973564c314dfbb066c5d0462b4abef3a555c8ec.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/5cdcd246a528ac57c62f124bc973564c314dfbb066c5d0462b4abef3a555c8ec.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/5f9a0f331c6334a51cfa28c0afde8a7292c5bc29cf1335000ee659296887a64c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/670e4cb6ef497f0257b4d88c3b83460d761b73df928a30570a5052fd8881cc1a.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/670e4cb6ef497f0257b4d88c3b83460d761b73df928a30570a5052fd8881cc1a.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/70aff743793543e7ba1f75e4961e21ff17443a718d1cca13dbbea55b84d6c34c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/82adaf406bf23ff685f6005ce1b65a24dbff82a5e4f0c2b583a4e88f7aa3553c.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/830af9bb6bab08a3bcf6c0ff03222ca32381fd3631cc518baf92d1f9860fa1ef.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/830af9bb6bab08a3bcf6c0ff03222ca32381fd3631cc518baf92d1f9860fa1ef.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/830af9bb6bab08a3bcf6c0ff03222ca32381fd3631cc518baf92d1f9860fa1ef_screenshots.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/840d5268e65493ce21ff23a332157ea2d9c4713586399f4854f9f4d8b1ab8ee5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/840d5268e65493ce21ff23a332157ea2d9c4713586399f4854f9f4d8b1ab8ee5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/8635b1be81a3f2d32241b7dd259252d5c7260e9aaa6aac776d53b944f66f3d25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/874fc3cb1299ca5e6883847f24eb85d896ff6c64121716139b45ce1b30a2f813.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/8e12dc5d3ea1d8e1cd10a0a3baf7df8446c177842fe7cfd311ad00a5b68d8081.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/SERENITY-JUNIT-3f2eb02b84915919e645bc1d661db798c9551b3b7917c98aa2b542e20b74c12a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/SERENITY-JUNIT-ece00ea140993950f8543880bf654633b3072f13cafa0c3e630b52188b4b4cd3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/a900fe1a6251b430ca56dee2f183d80d076b85f45958ac3e74f8800adf8cce3d.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/a900fe1a6251b430ca56dee2f183d80d076b85f45958ac3e74f8800adf8cce3d.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/b5baf111e1a893ddb5bdd8efb8e8b1fd7fd6db2724db39e508ae2f20586dbcc9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/bcf864a081e8583cab0c204430e49addff69f812aa6ae181629d292d6b6674bb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/build-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/build-info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/c41b62ccfd3b774c78a9ecf22f15a51e18dceb84e99e7bb0214d01c1e5ce06d9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/c41b62ccfd3b774c78a9ecf22f15a51e18dceb84e99e7bb0214d01c1e5ce06d9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/capabilities.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/capabilities.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/cc60237bf69065ea02666b13fb05605f7a1a96946949a0413240c13274ea510a.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/cc60237bf69065ea02666b13fb05605f7a1a96946949a0413240c13274ea510a.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/d9ee68cab046611553c49eb691b943da133c43ee5b2b21ece505b2840e34ebae.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/dbe2a6c8a36bcd90f544d82b394272885532689ce6bea07869dfc36b403a66ed.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/dbe2a6c8a36bcd90f544d82b394272885532689ce6bea07869dfc36b403a66ed.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/e82597ac14196b785385b582494cc78ac7b478377419cccd041e2981a8d30776.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/e82597ac14196b785385b582494cc78ac7b478377419cccd041e2981a8d30776.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/eb99680a103812a26c1299908e25589c629effa8223f4c78c21ce341f010d340.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/eb99680a103812a26c1299908e25589c629effa8223f4c78c21ce341f010d340.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/ece00ea140993950f8543880bf654633b3072f13cafa0c3e630b52188b4b4cd3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/ece00ea140993950f8543880bf654633b3072f13cafa0c3e630b52188b4b4cd3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/ece00ea140993950f8543880bf654633b3072f13cafa0c3e630b52188b4b4cd3_screenshots.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/ee120c31e6a4862d0fa2e8b48169fe709858e7babd5f814c41a98a6a22981d25.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/ee120c31e6a4862d0fa2e8b48169fe709858e7babd5f814c41a98a6a22981d25.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/efa777031bd50d479127a8e52290b108905b9b03e3092b335e44a60138328864.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/efa777031bd50d479127a8e52290b108905b9b03e3092b335e44a60138328864.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/efa777031bd50d479127a8e52290b108905b9b03e3092b335e44a60138328864.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/efa777031bd50d479127a8e52290b108905b9b03e3092b335e44a60138328864.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/f76207c48c43cfe5ad1a18735f8e972f188cd3215c1df6053301ac94bf7a2118.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/fa2c171c2f1745ba744146417a7d7d8f7170f70c7a9f8e185713329e0de1f2db.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/ff03677180cf8efe5c91219f11d69a310d510ef0648ea936d7fa8b3a85046315.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/ff03677180cf8efe5c91219f11d69a310d510ef0648ea936d7fa8b3a85046315.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/serenity/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/summary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CucumberRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CucumberRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestathonProj/pages/GoogleSearchPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestathonProj/pages/GoogleSearchPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestathonProj/steps/LoginSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestathonProj/steps/LoginSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestathonProj/steps/serenity/EndUserSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestathonProj/steps/serenity/EndUserSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/api/LoginApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cucumber-serenity-runner.vm" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cucumber-serenity-runner.vm" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +124,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="MultipleFeature" value="1" />
           <entry key="class" value="6" />
-          <entry key="feature" value="6" />
+          <entry key="feature" value="7" />
           <entry key="gradle" value="1" />
           <entry key="html" value="2" />
-          <entry key="java" value="28" />
+          <entry key="java" value="36" />
           <entry key="properties" value="2" />
           <entry key="txt" value="2" />
           <entry key="vm" value="2" />
@@ -35,19 +139,19 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
-          <entry key="Cucumber" value="6" />
+          <entry key="Cucumber" value="7" />
           <entry key="Groovy" value="1" />
           <entry key="HTML" value="2" />
-          <entry key="JAVA" value="28" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="JAVA" value="36" />
+          <entry key="PLAIN_TEXT" value="5" />
           <entry key="Properties" value="2" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="feature" value="176" />
-          <entry key="java" value="521" />
+          <entry key="feature" value="359" />
+          <entry key="java" value="947" />
           <entry key="properties" value="50" />
           <entry key="vm" value="17" />
           <entry key="xml" value="74" />
@@ -55,8 +159,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Cucumber" value="176" />
-          <entry key="JAVA" value="521" />
+          <entry key="Cucumber" value="359" />
+          <entry key="JAVA" value="947" />
           <entry key="PLAIN_TEXT" value="17" />
           <entry key="Properties" value="50" />
           <entry key="XML" value="74" />
@@ -67,89 +171,72 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/serenity/EndUserSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="82" column="17" lean-forward="true" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/api/LoginApi.java">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/features/login/login.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/LoginSteps.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="441">
+              <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1125#1126#0" expanded="true" />
+                <element signature="e#1164#1165#0" expanded="true" />
+                <element signature="e#1571#1572#0" expanded="true" />
+                <element signature="e#1633#1634#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/serenity/LoginStepDef.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/pages/GoogleSearchPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="6" column="45" lean-forward="true" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+            <state relative-caret-position="471">
+              <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1327#1328#0" expanded="true" />
+                <element signature="e#1364#1365#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/features/google_search/search.feature">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/features/composite_feature/MultiFeature.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Driver/MyChromeDriver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#336#337#0" expanded="true" />
-                <element signature="e#358#359#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/net/serenity-bdd/serenity-core/1.9.36/serenity-core-1.9.36.jar!/net/thucydides/core/webdriver/DriverSource.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            <state relative-caret-position="75">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/MultiPlatformSteps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/CucumberRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/api/TestApi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -177,6 +264,9 @@
       <find>thread</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -185,19 +275,23 @@
         <option value="$PROJECT_DIR$/target/generated-test-sources/cucumber/Parallel02IT.java" />
         <option value="$PROJECT_DIR$/target/generated-test-sources/cucumber/Parallel01IT.java" />
         <option value="$PROJECT_DIR$/src/test/java/SearchSteps.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TestathonProj/steps/serenity/EndUserSteps.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestathonProj/steps/SearchSteps.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestathonProj/pages/DictionaryPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TestathonProj/pages/GoogleSearchPage.java" />
         <option value="$PROJECT_DIR$/serenity.properties" />
         <option value="$PROJECT_DIR$/src/test/java/Driver/MyChromeDriver.java" />
         <option value="$PROJECT_DIR$/src/test/resources/features/google_search/search.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/cucumber-serenity-runner.vm" />
-        <option value="$PROJECT_DIR$/src/test/java/CucumberRunner.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/TestathonProj/pages/LoginPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestathonProj/steps/LoginSteps.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestathonProj/steps/serenity/LoginStepDef.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/features/composite_feature/MultiFeature.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/MultiplatformSteps.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestathonProj/pages/GoogleSearchPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestathonProj/steps/serenity/EndUserSteps.java" />
+        <option value="$PROJECT_DIR$/src/test/java/CucumberRunner.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestathonProj/steps/MultiPlatformSteps.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestathonProj/api/TestApi.java" />
       </list>
     </option>
   </component>
@@ -213,6 +307,7 @@
     <option name="width" value="1280" />
     <option name="height" value="726" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -249,6 +344,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Driver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestathonProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestathonProj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="TestathonProj" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -258,7 +361,26 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="TestathonProj" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestathonProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestathonProj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TestathonProj" type="462c0819:PsiDirectoryNode" />
               <item name="steps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestathonProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestathonProj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TestathonProj" type="462c0819:PsiDirectoryNode" />
+              <item name="steps" type="462c0819:PsiDirectoryNode" />
+              <item name="serenity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TestathonProj" type="b2602c69:ProjectViewProjectNode" />
@@ -275,6 +397,15 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="features" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TestathonProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestathonProj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="composite_feature" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -286,7 +417,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="pom&#9;FILE&#9;file:///Users/kumar/Desktop/TestProj/TestathonProj/pom.xml&#10;pom.xml&#9;FILE&#9;file:///Users/kumar/Desktop/TestProj/TestathonProj/pom.xml" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535454744792" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535459102735" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -318,7 +449,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber java.All Features in: serenity">
+  <component name="RunManager" selected="JUnit.CucumberRunner">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -403,8 +534,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber java.All Features in: serenity" />
         <item itemvalue="JUnit.CucumberRunner" />
+        <item itemvalue="Cucumber java.All Features in: serenity" />
         <item itemvalue="JUnit.DefinitionTestSuite" />
       </list>
     </recent_temporary>
@@ -435,12 +566,24 @@
     <history-entry file="All_Features_in__serenity - 2018.08.28 at 16h 37m 01s.xml">
       <configuration name="All Features in: serenity" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
+    <history-entry file="CucumberRunner - 2018.08.28 at 17h 44m 22s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Features_in__serenity - 2018.08.28 at 17h 45m 41s.xml">
+      <configuration name="All Features in: serenity" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="CucumberRunner - 2018.08.28 at 17h 48m 50s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CucumberRunner - 2018.08.28 at 17h 51m 28s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1280" height="726" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2835218" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2835218" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -450,15 +593,15 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.7397709" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.61538464" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.66939443" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.7561375" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="11" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="11" weight="0.7037643" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -474,6 +617,24 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/MultiPlatformSteps.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/MultiPlatformSteps.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/build.gradle" />
@@ -524,28 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/pages/GoogleSearchPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/SearchSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#785#786#0" expanded="true" />
-            <element signature="e#812#813#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -607,6 +746,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/pages/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/composite_feature/MultipleFeature">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Driver/MyChromeDriver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -619,27 +768,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/serenity/LoginStepDef.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="82" column="17" lean-forward="true" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
+        <state relative-caret-position="51">
+          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/api/LoginApi.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/pages/LoginPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/SearchSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="351">
+          <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#785#786#0" expanded="true" />
+            <element signature="e#812#813#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/features/login/login.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -655,29 +816,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/serenity/EndUserSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state relative-caret-position="441">
+          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
           <folding>
             <element signature="e#1125#1126#0" expanded="true" />
             <element signature="e#1164#1165#0" expanded="true" />
+            <element signature="e#1571#1572#0" expanded="true" />
+            <element signature="e#1633#1634#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/serenity/LoginStepDef.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/pages/GoogleSearchPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" column="45" lean-forward="true" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+        <state relative-caret-position="471">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1327#1328#0" expanded="true" />
+            <element signature="e#1364#1365#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/composite_feature/MultiFeature.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/api/LoginApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CucumberRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CucumberRunner.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/api/TestApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestathonProj/steps/MultiPlatformSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

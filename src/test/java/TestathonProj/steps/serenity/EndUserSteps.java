@@ -3,7 +3,6 @@ package TestathonProj.steps.serenity;
 import TestathonProj.pages.DictionaryPage;
 import TestathonProj.pages.GoogleSearchPage;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.steps.ScenarioSteps;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -60,5 +59,10 @@ public class EndUserSteps {
     @Step
     public void checkTitle(){
         assertThat(googleSearchPage.checkTitle(),equalTo("samsung - Google Search"));
+    }
+
+    @Step
+    public String getNumberofResults(){
+        return googleSearchPage.getSearchResultCount();
     }
 }
