@@ -8,9 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -41,7 +39,7 @@ public class ImportData {
           movieName = csvCell[0];
         System.out.println("----moviename--" + movieName);
         ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.addArguments("headless");
+       // chromeOptions.addArguments("headless");
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -64,12 +62,13 @@ public class ImportData {
           else
               count1=stringContains(driver.getTitle(),movieName);
 
-          if ((count >= 2) || (count1==movieName.toCharArray().length-1))
+          if ((count >= 2) || (count1>=movieName.toCharArray().length-1))
             hashMap.put(movieName, driver.getCurrentUrl());
           else
             hashMap.put(movieName, "No url found");
         } else
           hashMap.put(movieName, "No url found");
+        driver.quit();
       }
     }
     catch (Exception e){

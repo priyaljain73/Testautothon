@@ -24,6 +24,7 @@ public class GoogleSearchPage extends PageObject {
 
     public void searchName(String movie, String wikiLink) throws Exception {
         WebDriver driver = threadInfo.getDriver(movie);
+        driver.get("https://www.google.com/");
         driver.manage().window().fullscreen();
         driver.findElement(searchTextBox).click();
         driver.findElement(searchButton).click();
