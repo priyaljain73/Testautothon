@@ -48,6 +48,7 @@ public class DirectorNamesSteps {
 
 
         threadInfo.doMethods(obj, m).startThreads();
+        threadInfo.waitForThreadsToComplete();
 
     }
 
@@ -63,6 +64,7 @@ public class DirectorNamesSteps {
         Method m2 = cls1.getDeclaredMethod("getIMDbDirectorName", params);
 
         threadInfo.setNewMethods(obj, m, m2).startThreads();
+        threadInfo.waitForThreadsToComplete();
 
     }
 
@@ -76,6 +78,7 @@ public class DirectorNamesSteps {
         Method m = cls1.getDeclaredMethod("assertDirectorNames", params);
 
         threadInfo.setNewMethods(obj, m).startThreads();
+        threadInfo.waitForThreadsToComplete();
 
     }
 }

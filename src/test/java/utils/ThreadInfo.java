@@ -108,4 +108,21 @@ public class ThreadInfo {
         }
         return this;
     }
+
+    public void waitForThreadsToComplete()
+    {
+        int count = threadlist.size();
+        int finished = 0;
+        do {
+            finished = 0;
+            for(int i = 0; i < threadlist.size(); i++)
+            {
+                if(!threadlist.get(i).isAlive())
+                {
+                    finished = finished + 1;
+                }
+            }
+        }while(count == finished);
+    }
+
 }
