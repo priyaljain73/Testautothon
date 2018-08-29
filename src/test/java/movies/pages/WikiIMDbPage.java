@@ -8,16 +8,20 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class WikiPage extends PageObject {
+import static movies.steps.DirectorNamesSteps.threadInfo;
+
+public class WikiIMDbPage extends PageObject {
     @FindBy(xpath = "//*[contains(text(),'Directed by')]//following-sibling::td/a")
     private By wikiDirectorName;
 
     @FindBy(xpath = "//*[contains (@href,'imdb')]")
     private WebElementFacade imdbLinkFromWiki;
 
+    @FindBy(xpath = "//*[contains (text(),'Director')]/following-sibling::a")
+    private By imdbDirectorName;
 
-    public String[] getDirectorName() {
-        List<WebElement> directorNames = getDriver().findElements(wikiDirectorName);
+    public String[] getWikiDirectorName(String movie) throws Exception {
+        List<WebElement> directorNames = threadInfo.getDriver(movie).findElements(wikiDirectorName);
         String directorNameResult[] = new String[directorNames.size()];
 
         for (int i = 0; i < directorNames.size(); i++) {
@@ -32,5 +36,14 @@ public class WikiPage extends PageObject {
 
     public String getimdbLinkFromWiki() {
         return imdbLinkFromWiki.getText();
+    }
+
+    public String[] getIMDbDirectorName(String movie) throws Exception {
+        List<WebElement> directorElements = threadInfo.getDriver(movie).findElements(imdbDirectorName);
+        String[] directorName = new String[directorElements.size()];
+        for (int i = 0; i < directorElements.size(); i++) {
+            directorName[i] = directorElements.get(i).getText();
+        }
+        return directorName;
     }
 }

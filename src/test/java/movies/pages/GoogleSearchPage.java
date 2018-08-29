@@ -8,6 +8,8 @@ import org.openqa.selenium.Keys;
 
 import java.util.concurrent.TimeUnit;
 
+import static movies.steps.DirectorNamesSteps.threadInfo;
+
 /**
  * @author kumar on 28/08/18
  * @project X-search
@@ -25,13 +27,12 @@ public class GoogleSearchPage extends PageObject {
 //    @FindBy(xpath = "//*[contains (@href,'wikipedia')]")
 //    private WebElementFacade wikiLink;
 
-
-    public void searchName(String movie, String wikiLink) {
-        getDriver().manage().window().fullscreen();
+    public void searchName(String movie, String wikiLink) throws Exception {
+        threadInfo.getDriver(movie).manage().window().fullscreen();
         searchTextBox.withTimeoutOf(10, TimeUnit.SECONDS).waitUntilClickable().click();
         searchTextBox.type(movie);
         searchButton.sendKeys(Keys.ENTER);
-        getDriver().get(wikiLink);
+        threadInfo.getDriver(movie).get(wikiLink);
     }
 
 }
