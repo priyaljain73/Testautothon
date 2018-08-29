@@ -30,15 +30,12 @@ public class WikiIMDbPage extends PageObject {
         return directorNameResult;
     }
 
-    public void getToIMDbPage() {
-        imdbLinkFromWiki.click();
-    }
-
     public String getimdbLinkFromWiki() {
         return imdbLinkFromWiki.getText();
     }
 
     public String[] getIMDbDirectorName(String movie) throws Exception {
+        imdbLinkFromWiki.click();
         List<WebElement> directorElements = threadInfo.getDriver(movie).findElements(imdbDirectorName);
         String[] directorName = new String[directorElements.size()];
         for (int i = 0; i < directorElements.size(); i++) {

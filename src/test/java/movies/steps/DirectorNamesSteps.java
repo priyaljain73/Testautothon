@@ -28,8 +28,8 @@ public class DirectorNamesSteps {
         threadInfo = new ThreadInfo(movies);
 
         Class[] params = new Class[2];
-        params[0] = String.class;
-        params[1] = String.class;
+        params[0]= String.class;
+        params[1]= String.class;
 
         //Step Class & Functions
         Class cls = GoogleSearchPage.class;

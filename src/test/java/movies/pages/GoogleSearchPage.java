@@ -24,9 +24,6 @@ public class GoogleSearchPage extends PageObject {
     @FindBy(name = "btnK")
     private WebElementFacade searchButton;
 
-//    @FindBy(xpath = "//*[contains (@href,'wikipedia')]")
-//    private WebElementFacade wikiLink;
-
     public void searchName(String movie, String wikiLink) throws Exception {
         threadInfo.getDriver(movie).manage().window().fullscreen();
         searchTextBox.withTimeoutOf(10, TimeUnit.SECONDS).waitUntilClickable().click();
