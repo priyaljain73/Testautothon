@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class ImportData {
 
- private static String PATH_OF_FILE = "src/test/java/utils/movie.csv";
+ private static String PATH_OF_FILE = "testData/movie.csv";
   public static HashMap<String, String> generateData(){
 
     HashMap<String, String> hashMap = new HashMap();
