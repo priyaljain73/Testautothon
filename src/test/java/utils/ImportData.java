@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class ImportData {
 
- private static String PATH_OF_FILE = "/Users/kumar/movie.csv";
+ private static String PATH_OF_FILE = "src/test/java/utils/movie.csv";
   public static void main(String args[]){
     try{
       CSVReader reader = new CSVReader(new FileReader(PATH_OF_FILE));
