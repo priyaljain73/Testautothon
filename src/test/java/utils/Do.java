@@ -10,10 +10,13 @@ public class Do implements Runnable {
     WebDriver driver;
     Method[] methods;
     Object classObject;
+    String moviename;
+    String wikirurls;
 
-
-    Do(WebDriver driver)
+    Do(WebDriver driver, String moviename, String wikirurls)
     {
+        this.moviename = moviename;
+        this.wikirurls = wikirurls;
         this.driver = driver;
     }
 
@@ -24,7 +27,7 @@ public class Do implements Runnable {
         for(int i = 0; i < methods.length; i++)
         {
             try {
-                methods[i].invoke(classObject, null);
+                methods[i].invoke(classObject, moviename, wikirurls);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (InvocationTargetException e) {
@@ -41,6 +44,7 @@ public class Do implements Runnable {
     }
 
     public WebDriver getDriver() {
+
         return driver;
     }
 }
