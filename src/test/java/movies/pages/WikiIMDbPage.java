@@ -31,29 +31,47 @@ public class WikiIMDbPage extends PageObject {
     private String[] getGlobalDirectorName = null;
 
     public void extractDataFromWiki(String movie, String url) throws Exception {
-        threadInfo.getDo(movie).getDriver().get(url);
 
-        WebDriver driver = threadInfo.getDriver(movie);
-        List<WebElement> directorNames = driver.findElements(By.xpath("//*[contains(text(),'Directed by')]//following-sibling::td/a"));
-        String directorNameResult[] = new String[directorNames.size()];
+        if(!url.equalsIgnoreCase("No url found"))
+        {
+            threadInfo.getDo(movie).getDriver().get(url);
 
-        for (int i = 0; i < directorNames.size(); i++) {
-            directorNameResult[i] = directorNames.get(i).getText();
+            WebDriver driver = threadInfo.getDriver(movie);
+            List<WebElement> directorNames = driver.findElements(By.xpath("//*[contains(text(),'Directed by')]//following-sibling::td/a"));
+            String directorNameResult[] = new String[directorNames.size()];
+
+            for (int i = 0; i < directorNames.size(); i++) {
+                directorNameResult[i] = directorNames.get(i).getText();
+            }
+            threadInfo.getDo(movie).wikidirectornames = directorNameResult;
+            threadInfo.getDo(movie).imdburl= driver.findElement(By.xpath("//a[text() = 'IMDb']//preceding-sibling::a[1]")).getAttribute("href");
         }
-        globalDirectorNameResult = directorNameResult;
-        threadInfo.getDo(movie).wikidirectornames = directorNameResult;
-        threadInfo.getDo(movie).imdburl= driver.findElement(By.xpath("//*[contains (@href,'imdb')]")).getText();
+        else
+        {
+            String[] directorNameResult = {"Not Available"};
+            threadInfo.getDo(movie).wikidirectornames = directorNameResult;
+            threadInfo.getDo(movie).imdburl = "IMDb Movie URL Not Found";
+        }
+
     }
 
     public void extractDataFromImdb(String movie, String url) throws Exception {
-        WebDriver driver = threadInfo.getDriver(movie);
-        driver.findElement(By.xpath("//*[contains (@href,'imdb')]")).click();
-        List<WebElement> directorElements = driver.findElements(By.xpath("//*[contains (text(),'Director')]/following-sibling::a"));
-        String[] directorName = new String[directorElements.size()];
-        for (int i = 0; i < directorElements.size(); i++) {
-            directorName[i] = directorElements.get(i).getText();
+
+        if(!url.equalsIgnoreCase("No url found")) {
+            WebDriver driver = threadInfo.getDriver(movie);
+            driver.findElement(By.xpath("//a[text() = 'IMDb']//preceding-sibling::a[1]")).click();
+            List<WebElement> directorElements = driver.findElements(By.xpath("//*[contains (text(),'Director')]/following-sibling::a"));
+            String[] directorName = new String[directorElements.size()];
+            for (int i = 0; i < directorElements.size(); i++) {
+                directorName[i] = directorElements.get(i).getText();
+            }
+            threadInfo.getDo(movie).imdbdirectornames = directorName;
         }
-        threadInfo.getDo(movie).imdbdirectornames=directorName;
+        else
+        {
+            String[] directorName = {"Not Available"};
+            threadInfo.getDo(movie).imdbdirectornames = directorName;
+        }
     }
 
 

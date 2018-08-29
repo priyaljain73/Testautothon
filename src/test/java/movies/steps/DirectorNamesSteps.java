@@ -98,21 +98,25 @@ public class DirectorNamesSteps {
             int wikiDirectorNamesSize = threadInfo.getDo().get(i).wikidirectornames.length;
             int expectedMatch = (imdbDirectorNamesSize > wikiDirectorNamesSize) ? imdbDirectorNamesSize : wikiDirectorNamesSize;
             int count = 0;
-
+            boolean found = false;
             for (int j = 0; j < imdbDirectorNamesSize; j++) {
                 for (int k = 0; k < wikiDirectorNamesSize; k++) {
+                    System.out.println("Expected: "+threadInfo.getDo().get(i).imdbdirectornames[j]);
+                    System.out.println("Actual: "+threadInfo.getDo().get(i).wikidirectornames[k]);
                     if (threadInfo.getDo().get(i).imdbdirectornames[j].equalsIgnoreCase(threadInfo.getDo().get(i).wikidirectornames[k]))
                     {
-
-                        System.out.println("Expected: "+threadInfo.getDo().get(i).imdbdirectornames[j] );
-                        System.out.println("Actual: "+threadInfo.getDo().get(i).wikidirectornames[j] );
+                        found = true;
                         count++;
                         break;
                     }
                 }
+                if(!found)
+                {
+                    System.out.println("Could not find " + threadInfo.getDo().get(i).imdbdirectornames[j]);
+                }
             }
 
-            Assert.assertEquals(count, expectedMatch);
+            Assert.assertEquals(expectedMatch,count);
 
             System.out.println("Expected Match Count: "+expectedMatch );
             System.out.println("Actual Match Count: "+ count );
