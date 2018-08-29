@@ -33,7 +33,7 @@ public class ThreadInfo {
 
     void createThread(String moviename, WebDriver driver)
     {
-        Do dos = new Do(driver);
+        Do dos = new Do(driver, moviename, movieMap.get(moviename));
         dos.doMethods(classObject, methods);
         threadlist.add(new Thread(dos));
         driverlist.add(driver);
