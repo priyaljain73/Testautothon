@@ -1,12 +1,10 @@
 package movies.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
-import org.openqa.selenium.Keys;
-
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import static movies.steps.DirectorNamesSteps.threadInfo;
 
@@ -19,17 +17,17 @@ import static movies.steps.DirectorNamesSteps.threadInfo;
 public class GoogleSearchPage extends PageObject {
 
     @FindBy(id = "lst-ib")
-    private WebElementFacade searchTextBox;
+    private By searchTextBox;
 
     @FindBy(name = "btnK")
-    private WebElementFacade searchButton;
+    private By searchButton;
 
     public void searchName(String movie, String wikiLink) throws Exception {
-        threadInfo.getDriver(movie).manage().window().fullscreen();
-        searchTextBox.withTimeoutOf(10, TimeUnit.SECONDS).waitUntilClickable().click();
-        searchTextBox.type(movie);
-        searchButton.sendKeys(Keys.ENTER);
-        threadInfo.getDriver(movie).get(wikiLink);
+        WebDriver driver = threadInfo.getDriver(movie);
+        driver.manage().window().fullscreen();
+        driver.findElement(searchTextBox).click();
+        driver.findElement(searchButton).click();
+        driver.get(wikiLink);
     }
 
 }
