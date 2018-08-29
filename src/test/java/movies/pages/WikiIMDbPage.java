@@ -6,6 +6,7 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.Do;
 import utils.JSONObjects;
 
 import java.util.Arrays;
@@ -31,33 +32,32 @@ public class WikiIMDbPage extends PageObject {
     private String[] globalDirectorNameResult = null;
     private String[] getGlobalDirectorName = null;
 
-    public String[] getWikiDirectorName(String movie, String url) throws Exception {
+    public void extractDataFromWiki(String movie, String url) throws Exception {
+        threadInfo.getDo(movie).getDriver().get(url);
+
         WebDriver driver = threadInfo.getDriver(movie);
-        List<WebElement> directorNames = driver.findElements(wikiDirectorName);
+        List<WebElement> directorNames = driver.findElements(By.xpath("//*[contains(text(),'Directed by')]//following-sibling::td/a"));
         String directorNameResult[] = new String[directorNames.size()];
 
         for (int i = 0; i < directorNames.size(); i++) {
             directorNameResult[i] = directorNames.get(i).getText();
         }
         globalDirectorNameResult = directorNameResult;
-        return directorNameResult;
+        threadInfo.getDo(movie).wikidirectornames = directorNameResult;
+        threadInfo.getDo(movie).imdburl= driver.findElement(By.xpath("//*[contains (@href,'imdb')]")).getText();
     }
 
-    public String getimdbLinkFromWiki(String movie, String url) throws Exception {
+    public void extractDataFromImdb(String movie, String url) throws Exception {
         WebDriver driver = threadInfo.getDriver(movie);
-        return driver.findElement(imdbLinkFromWiki).getText();
-    }
-
-    public String[] getIMDbDirectorName(String movie, String url) throws Exception {
-        WebDriver driver = threadInfo.getDriver(movie);
-        driver.findElement(imdbLinkFromWiki).click();
-        List<WebElement> directorElements = driver.findElements(imdbDirectorName);
+        driver.findElement(By.xpath("//*[contains (@href,'imdb')]")).click();
+        List<WebElement> directorElements = driver.findElements(By.xpath("//*[contains (text(),'Director')]/following-sibling::a"));
         String[] directorName = new String[directorElements.size()];
         for (int i = 0; i < directorElements.size(); i++) {
             directorName[i] = directorElements.get(i).getText();
         }
-        getGlobalDirectorName = directorName;
-        return directorName;
+        threadInfo.getDo(movie).imdbdirectornames=directorName;
+
+
     }
 
 
