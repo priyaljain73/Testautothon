@@ -14,6 +14,11 @@ import java.util.List;
 import static movies.steps.DirectorNamesSteps.threadInfo;
 
 public class WikiIMDbPage extends PageObject {
+
+
+    String keyToVerify;
+
+
     @FindBy(xpath = "//*[contains(text(),'Directed by')]//following-sibling::td/a")
     private By wikiDirectorName;
 
@@ -23,8 +28,8 @@ public class WikiIMDbPage extends PageObject {
     @FindBy(xpath = "//*[contains (text(),'Director')]/following-sibling::a")
     private By imdbDirectorName;
 
-    String[] globalDirectorNameResult = null;
-    String[] getGlobalDirectorName = null;
+    private String[] globalDirectorNameResult = null;
+    private String[] getGlobalDirectorName = null;
 
     public String[] getWikiDirectorName(String movie, String url) throws Exception {
         WebDriver driver = threadInfo.getDriver(movie);
@@ -56,12 +61,9 @@ public class WikiIMDbPage extends PageObject {
     }
 
 
-    public Boolean assertDirectorNames(String actual, String expected) {
+    public Boolean assertKeyValues(String actual, String expected) {
 
-        if (Arrays.equals(globalDirectorNameResult, getGlobalDirectorName))
-            return true;
-        else
-            return false;
+        return Arrays.equals(globalDirectorNameResult, getGlobalDirectorName);
     }
 
 }
