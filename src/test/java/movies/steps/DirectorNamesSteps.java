@@ -36,7 +36,7 @@ public class DirectorNamesSteps {
         Object obj = cls.newInstance();
 
 
-        Method m = cls.getDeclaredMethod("searchName");
+        Method m = cls.getDeclaredMethod("searchName",params);
 
 
         threadInfo.doMethods(obj, m).startThreads();
