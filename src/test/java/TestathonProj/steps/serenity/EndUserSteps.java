@@ -48,12 +48,12 @@ public class EndUserSteps {
 
     @Step
     public void enterSearchTermInGoogle(String searchTerm){
-        googleSearchPage.enter_keywords(searchTerm);
+        googleSearchPage.searchName(searchTerm);
     }
 
     @Step
     public void startGoogleSearch(){
-        googleSearchPage.lookup_terms();
+        googleSearchPage.openWikiPage();
     }
 
     @Step
