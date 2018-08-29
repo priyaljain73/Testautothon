@@ -16,7 +16,7 @@ public class MyChromeDriver implements DriverSource {
   @Override
   public WebDriver newDriver() {
     ChromeOptions chromeOptions = new ChromeOptions();
-    chromeOptions.addArguments("headless");
+    //chromeOptions.addArguments("headless");
     chromeOptions.addArguments("window-size=1200x1200");
     return  new ChromeDriver(chromeOptions);
   }

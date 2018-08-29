@@ -72,6 +72,10 @@ public class ThreadInfo {
         throw new Exception("Do not found for movie : " + moviename);
     }
 
+    public ArrayList<Do> getDo() {
+        return Do;
+    }
+
     public ThreadInfo doMethods(Object classObject, Method... methods)
     {
         this.methods = methods;
@@ -122,7 +126,16 @@ public class ThreadInfo {
                     finished = finished + 1;
                 }
             }
-        }while(count == finished);
+        }while(count != finished);
     }
+
+    public void quitAllDrivers()
+    {
+        for(int i = 0; i < driverlist.size(); i++)
+        {
+            driverlist.get(i).quit();
+        }
+    }
+
 
 }

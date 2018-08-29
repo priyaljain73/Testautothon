@@ -4,14 +4,19 @@ import org.openqa.selenium.WebDriver;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
 
 public class Do implements Runnable {
 
-    WebDriver driver;
-    Method[] methods;
-    Object classObject;
-    String moviename;
-    String wikirurls;
+    public WebDriver driver;
+    public Method[] methods;
+    public Object classObject;
+    public String moviename;
+    public String wikirurls;
+    public String[] wikidirectornames;
+    public String imdburl;
+    public String[] imdbdirectornames;
+    public HashMap<String, Object> anyvalue;
 
     Do(WebDriver driver, String moviename, String wikirurls)
     {
