@@ -1,4 +1,4 @@
-package TestathonProj.api;
+package movies.api;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -11,7 +11,7 @@ public class LoginApi {
 
     public void checkCredentials(String usrname,String Password)
     {
-        //hit the TestathonProj.api in this method
+        //hit the movies.api in this method
         this.username=username;
         this.password=password;
 

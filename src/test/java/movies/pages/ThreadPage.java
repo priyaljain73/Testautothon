@@ -1,4 +1,4 @@
-package TestathonProj.pages;
+package movies.pages;
 
 public class ThreadPage {
 

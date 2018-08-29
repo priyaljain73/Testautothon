@@ -1,4 +1,4 @@
-package Driver;
+package driver;
 
 import net.thucydides.core.webdriver.DriverSource;
 import org.openqa.selenium.WebDriver;

@@ -1,9 +1,8 @@
-package Movies;
+package movies.steps;
 
-import static ConfigPackage.Config.*;
+import static configPackage.Config.*;
 
-import TestathonProj.pages.ThreadPage;
-import cucumber.api.PendingException;
+import movies.pages.ThreadPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

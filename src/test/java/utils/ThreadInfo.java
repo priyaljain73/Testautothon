@@ -1,6 +1,6 @@
 package utils;
 
-import Driver.MyChromeDriver;
+import driver.MyChromeDriver;
 import org.openqa.selenium.WebDriver;
 
 import java.lang.reflect.Method;
@@ -92,8 +92,8 @@ public class ThreadInfo {
                 return Do.get(i).getDriver();
             }
         }
-        System.out.println("Driver not found for movie : " + moviename);
-        throw new Exception("Driver not found for movie : " + moviename);
+        System.out.println("driver not found for movie : " + moviename);
+        throw new Exception("driver not found for movie : " + moviename);
     }
 
     public ThreadInfo setNewMethods(Object classObject, Method... methods) throws Exception {
