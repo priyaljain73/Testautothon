@@ -24,9 +24,7 @@ public class WikiIMDbPage extends PageObject {
     String [] globalDirectorNameResult=null;
     String [] getGlobalDirectorName=null;
 
-
-
-    public String[] getWikiDirectorName(String movie) throws Exception {
+    public String[] getWikiDirectorName(String movie, String url) throws Exception {
         List<WebElement> directorNames = threadInfo.getDriver(movie).findElements(wikiDirectorName);
         String directorNameResult[] = new String[directorNames.size()];
 
@@ -41,7 +39,7 @@ public class WikiIMDbPage extends PageObject {
         return imdbLinkFromWiki.getText();
     }
 
-    public String[] getIMDbDirectorName(String movie) throws Exception {
+    public String[] getIMDbDirectorName(String movie, String url) throws Exception {
         imdbLinkFromWiki.click();
         List<WebElement> directorElements = threadInfo.getDriver(movie).findElements(imdbDirectorName);
         String[] directorName = new String[directorElements.size()];

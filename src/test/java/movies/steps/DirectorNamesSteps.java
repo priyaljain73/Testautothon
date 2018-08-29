@@ -59,11 +59,14 @@ public class DirectorNamesSteps {
         Class cls = WikiIMDbPage.class;
         Object obj = cls.newInstance();
 
-        Method m = cls.getDeclaredMethod("method1", null);
-        Method m2 = cls.getDeclaredMethod("method2", null);
-        Method m3 = cls.getDeclaredMethod("method3", null);
+        Class[] params = new Class[2];
+        params[0]= String.class;
+        params[1]= String.class;
 
-        threadInfo.setNewMethods(obj, m, m2, m3).startThreads();
+        Method m = cls.getDeclaredMethod("getWikiDirectorName", params);
+        Method m2 = cls.getDeclaredMethod("getIMDbDirectorName", params);
+
+        threadInfo.setNewMethods(obj, m, m2).startThreads();
 
     }
 

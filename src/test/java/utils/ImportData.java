@@ -39,7 +39,11 @@ public class ImportData {
         WebElement webElement = driver.findElements(By.xpath("//a[starts-with(@href,'https://en.wikipedia.org/wiki')]")).get(0);
         if(webElement !=null){
           webElement.click();
-          hashMap.put(movieName,driver.getCurrentUrl());
+          if(driver.getTitle().contains(movieName)) {
+            hashMap.put(movieName, driver.getCurrentUrl());
+          }
+          else
+            hashMap.put(movieName,"No url found");
         }
         else
           hashMap.put(movieName,"No url found");
