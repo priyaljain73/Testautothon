@@ -11,6 +11,7 @@ import net.serenitybdd.screenplay.actions.Switch;
 import org.springframework.beans.factory.annotation.Autowired;
 import movies.pages.GoogleSearchPage;
 import movies.pages.WikiIMDbPage;
+import utils.ImportData;
 import utils.ThreadInfo;
 
 import java.lang.reflect.Method;
@@ -22,19 +23,16 @@ import static configPackage.Config.runmode;
 public class DirectorNamesSteps {
 
     public static ThreadInfo threadInfo;
-    public String runmode=Config.runmode;
+    public String runmode= Config.runmode;
 
     DirectorNameStepsImpl directorNameStepsimpl=new DirectorNameStepsImpl();
 
     @Given("^a list of movie name and urls$")
     public void aListOfMovieNameAndUrls() throws Exception {
 
+        HashMap<String,String> movies = ImportData.generateData();
+        System.out.println("current run mode" + runmode);
 
-
-        System.out.println("current run mode"+runmode);
-        Map<String, String> movies = new HashMap<String, String>();
-        movies.put("First", "first url");
-        movies.put("Second", "second url");
         threadInfo = new ThreadInfo(movies);
 
         Class[] params = new Class[2];
@@ -56,22 +54,17 @@ public class DirectorNamesSteps {
     @When("^user tries to extract the director names on wikipedia and imdb$")
     public void userTriesToCompareTheDirectorNamesOnWikipediaAndImdb() throws Exception {
 
-        switch (runmode) {
-            case "api":
-                directorNameStepsimpl.checkapi();
+        Class cls = WikiIMDbPage.class;
+        Object obj = cls.newInstance();
 
-                case "ui":
-                Class cls = WikiIMDbPage.class;
-                Object obj = cls.newInstance();
+        Method m = cls.getDeclaredMethod("method1", null);
+        Method m2 = cls.getDeclaredMethod("method2", null);
+        Method m3 = cls.getDeclaredMethod("method3", null);
 
-                Method m = cls.getDeclaredMethod("method1", null);
-                Method m2 = cls.getDeclaredMethod("method2", null);
-                Method m3 = cls.getDeclaredMethod("method3", null);
+        threadInfo.setNewMethods(obj, m, m2, m3).startThreads();
 
-                threadInfo.setNewMethods(obj, m, m2, m3).startThreads();
-
-        }
     }
+
     @Then("^the director names should match$")
     public void theDirectorNamesShouldMatch() {
 
