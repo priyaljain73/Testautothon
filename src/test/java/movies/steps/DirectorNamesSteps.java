@@ -3,7 +3,7 @@ package movies.steps;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import movies.pages.ThreadPage;
+import movies.pages.GoogleSearchPage;
 import movies.pages.ThreadPage2;
 import utils.ThreadInfo;
 
@@ -21,7 +21,7 @@ public class DirectorNamesSteps {
     @Given("^a list of movie name and urls$")
     public void aListOfMovieNameAndUrls() throws Exception {
 
-        System.out.println("current run mode"+runmode);
+        System.out.println("current run mode" + runmode);
         Map<String, String> movies = new HashMap<String, String>();
         movies.put("First", "first url");
         movies.put("Second", "second url");
@@ -29,15 +29,14 @@ public class DirectorNamesSteps {
 
 
         //Step Class & Functions
-        Class cls = ThreadPage.class;
+        Class cls = GoogleSearchPage.class;
         Object obj = cls.newInstance();
 
-        Method m = cls.getDeclaredMethod("method1", null);
-        Method m2 = cls.getDeclaredMethod("method2", null);
-        Method m3 = cls.getDeclaredMethod("method3", null);
+
+        Method m = cls.getDeclaredMethod("searchName");
 
 
-        threadInfo.doMethods(obj, m, m2, m3).startThreads();
+        threadInfo.doMethods(obj, m).startThreads();
 
     }
 
@@ -57,7 +56,6 @@ public class DirectorNamesSteps {
 
     @Then("^the director names should match$")
     public void theDirectorNamesShouldMatch() {
-
 
 
     }
