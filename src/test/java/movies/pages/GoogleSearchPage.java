@@ -4,7 +4,9 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import utils.Do;
 
 import static movies.steps.DirectorNamesSteps.threadInfo;
 
@@ -26,9 +28,14 @@ public class GoogleSearchPage extends PageObject {
         WebDriver driver = threadInfo.getDriver(movie);
         driver.get("https://www.google.com/");
         driver.manage().window().fullscreen();
-        driver.findElement(searchTextBox).click();
-        driver.findElement(searchButton).click();
-        driver.get(wikiLink);
+       // Thread.sleep(5000);
+
+        System.out.println("Movie: "+ movie +"Wikilink: "+wikiLink );
+
+        driver.findElement(By.id("lst-ib")).sendKeys(movie);
+        driver.findElement(By.id("lst-ib")).sendKeys(Keys.ENTER);
+
+       // driver.get(wikiLink);
     }
 
 }
