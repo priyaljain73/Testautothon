@@ -22,16 +22,16 @@ public class GoogleSearchPage extends PageObject {
     @FindBy(name = "btnK")
     private WebElementFacade searchButton;
 
-    @FindBy(xpath = "//*[contains (@href,'wikipedia')]")
-    private WebElementFacade wikiLink;
+//    @FindBy(xpath = "//*[contains (@href,'wikipedia')]")
+//    private WebElementFacade wikiLink;
 
 
-    public void searchName(String movie) {
+    public void searchName(String movie, String wikiLink) {
         getDriver().manage().window().fullscreen();
         searchTextBox.withTimeoutOf(10, TimeUnit.SECONDS).waitUntilClickable().click();
         searchTextBox.type(movie);
         searchButton.sendKeys(Keys.ENTER);
-        wikiLink.click();
+        getDriver().get(wikiLink);
     }
 
 }

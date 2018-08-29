@@ -26,8 +26,11 @@ public class WikiPage extends PageObject {
         return directorNameResult;
     }
 
-    public String getimdbLinkFromWiki() {
+    public void getToIMDbPage() {
+        imdbLinkFromWiki.click();
+    }
 
+    public String getimdbLinkFromWiki() {
         return imdbLinkFromWiki.getText();
     }
 }
