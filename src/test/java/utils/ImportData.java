@@ -1,6 +1,7 @@
 package utils;
 
 import au.com.bytecode.opencsv.CSVReader;
+import com.google.common.base.Splitter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -22,12 +23,18 @@ public class ImportData {
  private static String PATH_OF_FILE = "src/test/java/utils/movie.csv";
   public static HashMap<String, String> generateData(){
     try{
+
       CSVReader reader = new CSVReader(new FileReader(PATH_OF_FILE));
       String [] csvCell;
       HashMap<String,String> hashMap = new HashMap();
       //while loop will be executed till the last line In CSV.
       while ((csvCell = reader.readNext()) != null) {
-        String movieName = csvCell[0].split("\\.")[1].trim();
+
+       String movieName ;
+       if(csvCell[0].split("\\.")[1]!=null||csvCell[0].split("\\.")[1].length()==0)
+         movieName = csvCell[0].split("\\.")[1].trim();
+       else
+         movieName = csvCell[0];
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("headless");
         WebDriver driver = new ChromeDriver(chromeOptions);
@@ -39,11 +46,7 @@ public class ImportData {
         WebElement webElement = driver.findElements(By.xpath("//a[starts-with(@href,'https://en.wikipedia.org/wiki')]")).get(0);
         if(webElement !=null){
           webElement.click();
-          if(driver.getTitle().contains(movieName)) {
-            hashMap.put(movieName, driver.getCurrentUrl());
-          }
-          else
-            hashMap.put(movieName,"No url found");
+          System.out.println("MovieName"+movieName+" "+"Title:"+driver.getTitle());
         }
         else
           hashMap.put(movieName,"No url found");
@@ -60,5 +63,9 @@ public class ImportData {
       e.printStackTrace();
     }
     return null;
+  }
+
+  public static void main(String[] args) {
+  generateData();
   }
 }
