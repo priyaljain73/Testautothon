@@ -33,4 +33,40 @@ public final class Config {
         }
         System.out.println("outside static block");
     }
+
+    public String getProperty(String keyname) throws IOException {
+        String environmentFile = "/src/test/resources/environment.properties";
+        InputStream propertyfileinputstream = new FileInputStream(workingDir+environmentFile);
+        Properties prop = new Properties();
+        prop.load(propertyfileinputstream);
+
+        if(prop.contains(keyname))
+        {
+            String p = prop.getProperty(keyname).trim();
+            propertyfileinputstream.close();
+            return p;
+        }
+        else
+        {
+            propertyfileinputstream.close();
+            return "key not found";
+        }
+    }
+
+
+    public int getMobileThreadCount()
+    {
+        try {
+            int count = Integer.parseInt(getProperty("mobile.thread.count"));
+            if(count <= 0)
+            {
+                count = 1;
+            }
+            return count;
+        } catch (IOException e) {
+            return 1;
+        }
+    }
+
+
 }

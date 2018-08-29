@@ -18,14 +18,16 @@ public class Do implements Runnable {
     public String imdburl;
     public String[] imdbdirectornames;
     public HashMap<String, Object> anyvalue;
+
     public long threadID = 0;
     public long startTime = 0;
     public long endTime = 0;
-    boolean isFirstCall = true;
     public ArrayList<String> notFound;
+    public boolean isMobile;
+    boolean isFirstCall = true;
 
-    Do(WebDriver driver, String moviename, String wikirurls)
-    {
+
+    Do(WebDriver driver, String moviename, String wikirurls) {
         this.moviename = moviename;
         this.wikirurls = wikirurls;
         this.driver = driver;
@@ -35,13 +37,11 @@ public class Do implements Runnable {
     @Override
     public void run() {
 
-        if(isFirstCall)
-        {
+        if (isFirstCall) {
             startTime = System.currentTimeMillis();
             isFirstCall = false;
         }
-        for(int i = 0; i < methods.length; i++)
-        {
+        for (int i = 0; i < methods.length; i++) {
             try {
                 methods[i].invoke(classObject, moviename, wikirurls);
             } catch (IllegalAccessException e) {
@@ -54,8 +54,13 @@ public class Do implements Runnable {
 
     }
 
-    public void doMethods(Object classObject, Method... methods)
-    {
+    public void doMethods(boolean isMobile, Object classObject, Method... methods) {
+        this.methods = methods;
+        this.classObject = classObject;
+        this.isMobile = isMobile;
+    }
+
+    public void doMethods(Object classObject, Method... methods) {
         this.methods = methods;
         this.classObject = classObject;
     }
