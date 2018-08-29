@@ -12,6 +12,7 @@ public class DirectorNamesSteps {
 
     @Given("^a list of movie name and urls$")
     public void aListOfMovieNameAndUrls() {
+        System.out.println("current run mode"+.);
     }
 
     @When("^user tries to compare the director names on wikipedia and imdb$")
