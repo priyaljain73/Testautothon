@@ -1,8 +1,6 @@
 package movies.stepImpl;
 
-import Helpers.HttpHelper;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
+import helpers.HttpHelper;
 import model.ImdbData;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -16,10 +14,10 @@ public class DirectorNameStepsImpl {
 
   private static String IMDB_URL="https://www.omdbapi.com/?t=";
 
-    public String returnDirectorFromImdb(String filmName){
+    public String returnDirectorFromImdb(String movie , String url){
 
       try {
-        ImdbData imdbData = (ImdbData) httpHelper.doGetRequest(IMDB_URL+filmName+"&plot=full&apikey=380de361", ImdbData.class);
+        ImdbData imdbData = (ImdbData) httpHelper.doGetRequest(IMDB_URL+movie+"&plot=full&apikey=380de361", ImdbData.class);
         return imdbData.getDirector();
       } catch (IOException e) {
         e.printStackTrace();
@@ -27,7 +25,7 @@ public class DirectorNameStepsImpl {
       return null;
     }
 
-    public String returnDirectorFromWiki(String wikiUrl){
+    public String returnDirectorFromWiki(String movie , String wikiUrl){
 
       try {
         Document document = Jsoup.connect(wikiUrl).get();

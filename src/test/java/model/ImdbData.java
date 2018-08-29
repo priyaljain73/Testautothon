@@ -2,9 +2,7 @@ package model;
 
 
 
-import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -16,6 +14,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class ImdbData {
   private String title;
   private String year;
@@ -43,5 +43,7 @@ public class ImdbData {
   private String website;
   private String response;
 
-
+    public String getDirector() {
+        return director;
+    }
 }
