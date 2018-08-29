@@ -54,8 +54,6 @@ public class WikiIMDbPage extends PageObject {
             directorName[i] = directorElements.get(i).getText();
         }
         threadInfo.getDo(movie).imdbdirectornames=directorName;
-
-
     }
 
 

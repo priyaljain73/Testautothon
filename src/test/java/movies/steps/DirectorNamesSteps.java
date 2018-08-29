@@ -7,6 +7,7 @@ import cucumber.api.java.en.When;
 import movies.pages.GoogleSearchPage;
 import movies.pages.WikiIMDbPage;
 import movies.stepImpl.DirectorNameStepsImpl;
+import org.junit.Assert;
 import utils.Do;
 import utils.ImportData;
 import utils.ThreadInfo;
@@ -29,17 +30,15 @@ public class DirectorNamesSteps {
     @Given("^a list of movie name and urls$")
     public void aListOfMovieNameAndUrls() throws Exception {
 
-       // HashMap<String, String> movies = ImportData.generateData();
+        HashMap<String, String> movies = ImportData.generateData();
 
         //-------
 
-        HashMap<String, String> movies = new HashMap<>();
-        movies.put("The Avengers","https://en.wikipedia.org/wiki/The_Avengers_(2012_film)");
-               movies.put("The Godfather","https://en.wikipedia.org/wiki/The_Godfather");
-
+       // HashMap<String, String> movies = new HashMap<>();
+       // movies.put("The Avengers","https://en.wikipedia.org/wiki/The_Avengers_(2012_film)");
+         //      movies.put("The Godfather","https://en.wikipedia.org/wiki/The_Godfather");
 
         //--------
-
 
 
         System.out.println("current run mode" + runmode);
@@ -90,31 +89,34 @@ public class DirectorNamesSteps {
 
         threadInfo.quitAllDrivers();
 
-        for(int i = 0; i < threadInfo.getDo().size(); i++)
-        {
+        for (int i = 0; i < threadInfo.getDo().size(); i++) {
             System.out.println("Movie : " + threadInfo.getDo().get(i).moviename);
             System.out.println("Wiki url : " + threadInfo.getDo().get(i).wikirurls);
             System.out.println("IMDB url : " + threadInfo.getDo().get(i).imdburl);
 
-            for(int j = 0; j < threadInfo.getDo().get(i).imdbdirectornames.length; j++)
-            {
-                System.out.println("IMDB Director : " + threadInfo.getDo().get(i).imdbdirectornames[j]);
+            int imdbDirectorNamesSize = threadInfo.getDo().get(i).imdbdirectornames.length;
+            int wikiDirectorNamesSize = threadInfo.getDo().get(i).wikidirectornames.length;
+            int expectedMatch = (imdbDirectorNamesSize > wikiDirectorNamesSize) ? imdbDirectorNamesSize : wikiDirectorNamesSize;
+            int count = 0;
+
+            for (int j = 0; j < imdbDirectorNamesSize; j++) {
+                for (int k = 0; k < wikiDirectorNamesSize; k++) {
+                    if (threadInfo.getDo().get(i).imdbdirectornames[j].equalsIgnoreCase(threadInfo.getDo().get(i).wikidirectornames[k]))
+                    {
+
+                        System.out.println("Expected: "+threadInfo.getDo().get(i).imdbdirectornames[j] );
+                        System.out.println("Actual: "+threadInfo.getDo().get(i).wikidirectornames[j] );
+                        count++;
+                        break;
+                    }
+                }
             }
 
-            for(int j = 0; j < threadInfo.getDo().get(i).wikidirectornames.length; j++)
-            {
-                System.out.println("Wiki Director : " + threadInfo.getDo().get(i).wikidirectornames[j]);
-            }
+            Assert.assertEquals(count, expectedMatch);
+
+            System.out.println("Expected Match Count: "+expectedMatch );
+            System.out.println("Actual Match Count: "+ count );
+
+
         }
-
-//        Class[] params = new Class[2];
-//        params[0] = String.class;
-//        params[1] = String.class;
-//
-//        Method m = cls1.getDeclaredMethod("assertKeyValues", params);
-//
-//        threadInfo.setNewMethods(obj, m).startThreads();
-//        threadInfo.waitForThreadsToComplete();
-
-    }
-}
+    }}

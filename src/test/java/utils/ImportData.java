@@ -46,8 +46,7 @@ public class ImportData {
         driver.navigate().to("https://www.google.co.in/");
         driver.findElement(By.id("lst-ib")).sendKeys("movie:" + movieName + " wikipedia page");
         driver.findElement(By.name("btnK")).sendKeys(Keys.ENTER);
-        WebElement webElement = driver.findElements(By.xpath("//a[starts-with(@href,'https://en.wikipedia.org/wiki')]"))
-            .get(0);
+        WebElement webElement = driver.findElements(By.xpath("//a[starts-with(@href,'https://en.wikipedia.org/wiki')]")).get(0);
         if (webElement != null) {
           webElement.click();
           System.out.println("MovieName" + movieName + " " + "Title:" + driver.getTitle());
