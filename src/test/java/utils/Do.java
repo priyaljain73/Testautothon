@@ -24,6 +24,8 @@ public class Do implements Runnable {
     public long endTime = 0;
     public ArrayList<String> notFound;
     public boolean isMobile;
+    public boolean isHTTP;
+    public boolean isWeb;
     boolean isFirstCall = true;
 
 
@@ -54,10 +56,12 @@ public class Do implements Runnable {
 
     }
 
-    public void doMethods(boolean isMobile, Object classObject, Method... methods) {
+    public void doMethods(boolean isWeb, boolean isHTTP, boolean isMobile, Object classObject, Method... methods) {
         this.methods = methods;
         this.classObject = classObject;
         this.isMobile = isMobile;
+        this.isHTTP = isHTTP;
+        this.isWeb = isWeb;
     }
 
     public void doMethods(Object classObject, Method... methods) {

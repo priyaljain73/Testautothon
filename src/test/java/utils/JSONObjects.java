@@ -4,12 +4,14 @@ import movies.steps.DirectorNamesSteps;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class JSONObjects {
 
-    public void createJSON()
-    {
+    public void createJSON() throws IOException {
         JSONObject jo = new JSONObject();
         JSONArray data = new JSONArray();
 
@@ -28,7 +30,20 @@ public class JSONObjects {
             moviesData.put("imdbDirector", getDirectorsName(dos.imdbdirectornames));
             moviesData.put("difference", getNotFound(dos.notFound));
             moviesData.put("threadID", dos.threadID);
-            moviesData.put("platformName", dos.threadID);
+
+            if(dos.isMobile)
+            {
+                moviesData.put("platformName", "Mobile");
+            }
+            else if(dos.isHTTP)
+            {
+                moviesData.put("platformName", "HTTP");
+            }
+            else if(dos.isWeb)
+            {
+                moviesData.put("platformName", "Web");
+            }
+            
             moviesData.put("startTime",dos.startTime );
             moviesData.put("endTime",dos.endTime );
             if(getNotFound(dos.notFound).equals("NA"))
@@ -43,6 +58,28 @@ public class JSONObjects {
         }
         jo.put("Data", data);
         System.out.println(jo.toJSONString());
+
+        String write = "function getJSON() {\n" +
+                "\tvar JSON = " + jo.toJSONString() + ";\n" +
+                "return JSON;\n" +
+                "};";
+
+
+
+        FileWriter file = null;
+        try {
+            File f = new File("src/test/java/report/js/data.js");
+            if(!(f.exists() && f.isFile()))
+            {
+                f.createNewFile();
+            }
+            file = new FileWriter("src/test/java/report/js/data.js");
+            file.write(write);
+        } finally {
+            file.flush();
+            file.close();
+        }
+
     }
 
 

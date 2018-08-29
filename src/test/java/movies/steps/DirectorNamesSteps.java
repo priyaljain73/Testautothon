@@ -61,11 +61,8 @@ public class DirectorNamesSteps {
 
         Method m = cls.getDeclaredMethod("extractDataFromWiki", params);
 
-        System.out.println(System.currentTimeMillis());
         threadInfo.doMethods(obj, m).startThreads();
-        System.out.println(System.currentTimeMillis());
         threadInfo.waitForThreadsToComplete();
-        System.out.println(System.currentTimeMillis());
 
 
     }

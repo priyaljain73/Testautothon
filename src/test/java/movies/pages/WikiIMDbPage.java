@@ -59,12 +59,16 @@ public class WikiIMDbPage extends PageObject {
 
         if (!url.equalsIgnoreCase("No url found")) {
             WebDriver driver = threadInfo.getDriver(movie);
-            driver.findElement(By.xpath("//a[text() = 'IMDb']//preceding-sibling::a[1]")).click();
             if (threadInfo.getDo(movie).isMobile) {
                 driver.findElement(By.xpath("//*[contains(text(),'External links')]")).click();
-                directorElements = driver.findElements(By.xpath("//*[contains (text(),'Director')]/following-sibling::span"));
-            } else
+                driver.findElement(By.xpath("//a[text() = 'IMDb']//preceding-sibling::a[1]")).click();
+                directorElements = driver.findElements(By.xpath("//*[contains (text(),'Director')]//following-sibling::span"));
+            }
+            else
+            {
+                driver.findElement(By.xpath("//a[text() = 'IMDb']//preceding-sibling::a[1]")).click();
                 directorElements = driver.findElements(By.xpath("//*[contains (text(),'Director')]/following-sibling::a"));
+            }
             String[] directorName = new String[directorElements.size()];
             for (int i = 0; i < directorElements.size(); i++) {
                 directorName[i] = directorElements.get(i).getText();
