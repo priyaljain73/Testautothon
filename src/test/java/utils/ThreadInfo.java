@@ -52,7 +52,7 @@ public class ThreadInfo {
 
         for(int i = 0; i < movielist.size(); i++)
         {
-            if(movielist.equals(moviename)) {
+            if(movielist.get(i).equals(moviename)) {
                 return threadlist.get(i);
             }
         }
@@ -64,7 +64,7 @@ public class ThreadInfo {
 
         for(int i = 0; i < movielist.size(); i++)
         {
-            if(movielist.equals(moviename)) {
+            if(movielist.get(i).equals(moviename)) {
                 return Do.get(i);
             }
         }
@@ -88,12 +88,12 @@ public class ThreadInfo {
     public WebDriver getDriver(String moviename) throws Exception {
         for(int i = 0; i < movielist.size(); i++)
         {
-            if(movielist.equals(moviename)) {
+            if(movielist.get(i).equals(moviename)) {
                 return Do.get(i).getDriver();
             }
         }
-        System.out.println("driver not found for movie : " + moviename);
-        throw new Exception("driver not found for movie : " + moviename);
+        System.out.println("Driver not found for movie : " + moviename);
+        throw new Exception("Driver not found for movie : " + moviename);
     }
 
     public ThreadInfo setNewMethods(Object classObject, Method... methods) throws Exception {
