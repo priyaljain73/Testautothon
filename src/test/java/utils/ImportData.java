@@ -1,7 +1,6 @@
 package utils;
 
 import au.com.bytecode.opencsv.CSVReader;
-import com.google.common.base.Splitter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -22,50 +23,73 @@ public class ImportData {
 
  private static String PATH_OF_FILE = "src/test/java/utils/movie.csv";
   public static HashMap<String, String> generateData(){
-    try{
 
+    HashMap<String, String> hashMap = new HashMap();
+
+    try {
       CSVReader reader = new CSVReader(new FileReader(PATH_OF_FILE));
-      String [] csvCell;
-      HashMap<String,String> hashMap = new HashMap();
+      String[] csvCell;
+
       //while loop will be executed till the last line In CSV.
       while ((csvCell = reader.readNext()) != null) {
-
-       String movieName ;
-       if(csvCell[0].split("\\.")[1]!=null||csvCell[0].split("\\.")[1].length()==0)
-         movieName = csvCell[0].split("\\.")[1].trim();
-       else
-         movieName = csvCell[0];
+        System.out.println("---csvCell[0]-" + csvCell[0]);
+        String movieName;
+        String temp = csvCell[0].split("\\.")[1];
+        if (temp != null || temp.length() != 0)
+          movieName = temp.trim();
+        else
+          movieName = csvCell[0];
+        System.out.println("----moviename--" + movieName);
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("headless");
+//        chromeOptions.addArguments("headless");
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.navigate().to("https://www.google.co.in/");
-        driver.findElement(By.id("lst-ib")).sendKeys("movie:"+movieName+" wikipedia page");
+        driver.findElement(By.id("lst-ib")).sendKeys("movie:" + movieName + " wikipedia page");
         driver.findElement(By.name("btnK")).sendKeys(Keys.ENTER);
-        WebElement webElement = driver.findElements(By.xpath("//a[starts-with(@href,'https://en.wikipedia.org/wiki')]")).get(0);
-        if(webElement !=null){
+        WebElement webElement = driver.findElements(By.xpath("//a[starts-with(@href,'https://en.wikipedia.org/wiki')]"))
+            .get(0);
+        if (webElement != null) {
           webElement.click();
-          System.out.println("MovieName"+movieName+" "+"Title:"+driver.getTitle());
-        }
-        else
-          hashMap.put(movieName,"No url found");
-        driver.close();
-      }
+          System.out.println("MovieName" + movieName + " " + "Title:" + driver.getTitle());
+          int count = 0;
+          int count1=0;
+          String[] words = movieName.split("\\s");
+          if(words.length>1)
+          for (String str : words) {
+            if (driver.getTitle().contains(str))
+              count++;
+          }
+          else
+              count1=stringContains(driver.getTitle(),movieName);
 
-      for (Map.Entry<String, String> entry : hashMap.entrySet()) {
-        System.out.println(entry.getKey()+" : "+entry.getValue());
+          if ((count >= 2) || (count1==movieName.toCharArray().length-1))
+            hashMap.put(movieName, driver.getCurrentUrl());
+          else
+            hashMap.put(movieName, "No url found");
+        } else
+          hashMap.put(movieName, "No url found");
       }
-
-      return hashMap;
     }
-    catch(Exception e){
-      e.printStackTrace();
+    catch (Exception e){
     }
-    return null;
+    for (Map.Entry<String, String> entry : hashMap.entrySet()) {
+      System.out.println(entry.getKey() + " : " + entry.getValue());
+    }
+    return hashMap;
   }
 
-  public static void main(String[] args) {
-  generateData();
+  private static int stringContains(String longer, String shorter) {
+    int i = 0;
+    for (char c : shorter.toCharArray()) {
+      if (longer.indexOf(c, i)>= 0) { i++; }
+    }
+    return i;
+  }
+
+    public static void main(String[] args) {
+    generateData();
   }
 }
+
