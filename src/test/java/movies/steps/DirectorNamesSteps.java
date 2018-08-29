@@ -5,6 +5,8 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import movies.pages.ThreadPage;
 import movies.pages.ThreadPage2;
+import movies.stepImpl.DirectorNameStepsImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import utils.ThreadInfo;
 
 import java.lang.reflect.Method;
@@ -21,6 +23,8 @@ public class DirectorNamesSteps {
     @Given("^a list of movie name and urls$")
     public void aListOfMovieNameAndUrls() throws Exception {
 
+        DirectorNameStepsImpl directorNameStepsimpl=new DirectorNameStepsImpl();
+        directorNameStepsimpl.checkapi();
         System.out.println("current run mode"+runmode);
         Map<String, String> movies = new HashMap<String, String>();
         movies.put("First", "first url");
