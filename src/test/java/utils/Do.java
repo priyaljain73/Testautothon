@@ -17,6 +17,7 @@ public class Do implements Runnable {
     public String imdburl;
     public String[] imdbdirectornames;
     public HashMap<String, Object> anyvalue;
+    public boolean isMobile;
 
     Do(WebDriver driver, String moviename, String wikirurls)
     {
@@ -40,6 +41,13 @@ public class Do implements Runnable {
             }
         }
 
+    }
+
+    public void doMethods(boolean isMobile, Object classObject, Method... methods)
+    {
+        this.methods = methods;
+        this.classObject = classObject;
+        this.isMobile = isMobile;
     }
 
     public void doMethods(Object classObject, Method... methods)
