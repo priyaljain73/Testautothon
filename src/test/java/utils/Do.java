@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Do implements Runnable {
@@ -17,6 +18,11 @@ public class Do implements Runnable {
     public String imdburl;
     public String[] imdbdirectornames;
     public HashMap<String, Object> anyvalue;
+    public long threadID = 0;
+    public long startTime = 0;
+    public long endTime = 0;
+    boolean isFirstCall = true;
+    public ArrayList<String> notFound;
 
     Do(WebDriver driver, String moviename, String wikirurls)
     {
@@ -29,6 +35,11 @@ public class Do implements Runnable {
     @Override
     public void run() {
 
+        if(isFirstCall)
+        {
+            startTime = System.currentTimeMillis();
+            isFirstCall = false;
+        }
         for(int i = 0; i < methods.length; i++)
         {
             try {
@@ -39,6 +50,7 @@ public class Do implements Runnable {
                 e.printStackTrace();
             }
         }
+        endTime = System.currentTimeMillis();
 
     }
 

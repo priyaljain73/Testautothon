@@ -31,14 +31,14 @@ public class ThreadInfo {
     }
 
 
-    void createThread(String moviename, WebDriver driver)
-    {
+    void createThread(String moviename, WebDriver driver) throws Exception {
         Do dos = new Do(driver, moviename, movieMap.get(moviename));
         dos.doMethods(classObject, methods);
         threadlist.add(new Thread(dos));
         driverlist.add(driver);
         movielist.add(moviename);
         Do.add(dos);
+        dos.threadID = getThread(moviename).getId();
     }
 
     void reinitThread(String moviename, WebDriver driver, Do dos)
@@ -76,8 +76,7 @@ public class ThreadInfo {
         return Do;
     }
 
-    public ThreadInfo doMethods(Object classObject, Method... methods)
-    {
+    public ThreadInfo doMethods(Object classObject, Method... methods) throws Exception {
         this.methods = methods;
         this.classObject = classObject;
         ArrayList<String> movies = new ArrayList();

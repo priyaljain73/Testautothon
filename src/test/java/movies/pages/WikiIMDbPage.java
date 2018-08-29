@@ -75,9 +75,4 @@ public class WikiIMDbPage extends PageObject {
     }
 
 
-    public Boolean assertKeyValues(String actual, String expected) {
-
-        return Arrays.equals(globalDirectorNameResult, getGlobalDirectorName);
-    }
-
 }
