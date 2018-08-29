@@ -33,7 +33,8 @@ td, th {
     background-color: #4CAF50;
     color: white;
 }
-</style>
+
+    </style>
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
 <center><img src="https://stepinforum.org/testautothon/wp-content/uploads/2017/04/logo.png" width="300" height="80">
@@ -53,21 +54,25 @@ td, th {
                 <th>Snapshot of Imdb</th>
                 <th>Imdb Director(s)</th>
                 <th>Name Difference(s)</th>
-                <th>Thread Name</th>
+                <th>Thread ID</th>
                 <th>Platform Name</th>
+                <th>Start Time</th>
+                <th>End Time</th>
             </tr>
-            <tr ng-repeat="x in records">
-                <td>{{x.Testcase[0].duration}}</td>
-                <td>{{x.Testcase[0].name}}</td>
-                <td>{{x.Testcase[0].startTime}}</td>
-                <td>{{x.Testcase[0].endTime}}</td>
-                <td>{{x.Testcase[0].TestCaseName}}</td>
-                <td>{{x.Testcase[0].TestCaseName}}</td>
-                <td>{{x.Testcase[0].TestCaseName}}</td>
-                <td>{{x.Testcase[0].status}}</td>
-                <td>{{x.Testcase[0].status}}</td>
-                <td>{{x.Testcase[0].status}}</td>
-                <td>{{x.Testcase[0].status}}</td>
+            <tr ng-repeat="x in Data">
+                <td>{{x.movieID}}</td>
+                <td>{{x.movieName}}</td>
+                <td>{{x.wikipediaUrl}}</td>
+                <td>{{x.wikipediaSnapshot}}</td>
+                <td>{{x.wikipediaDirector}}</td>
+                <td>{{x.imdbUrl}}</td>
+                <td>{{x.imdbSnapshot}}</td>
+                <td>{{x.imdbDirector}}</td>
+                <td>{{x.difference}}</td>
+                <td>{{x.threadID}}</td>
+                <td>{{x.platformName}}</td>
+                <td>{{x.startTime}}</td>
+                <td>{{x.endTime}}</td>
             </tr>
             </thead>
         </table>
@@ -86,12 +91,11 @@ td, th {
     <script>
 	var app = angular.module("myApp", []);
 	app.controller("myCtrl", function($scope) {
-	$scope.records = getJSON();
-	console.log($scope.records);
-	$scope.records = $scope.records.testCases;
-	console.log($scope.records[0].Testcase[0]);
-	console.log($scope.TestCaseName);
+	$scope.Data = getJSON();
+	console.log($scope.Data);
+	$scope.Data = $scope.Data;
   			});
+
 
     </script>
     <!--===============================================================================================-->
