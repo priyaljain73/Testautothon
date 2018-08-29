@@ -62,7 +62,7 @@ td, th {
             <tr ng-repeat="x in Data">
                 <td>{{x.movieID}}</td>
                 <td>{{x.movieName}}</td>
-                <td>{{x.wikipediaUrl}}</td>
+                <td><a href={{x.wikipediaUrl}}><b>{{x.movieName}}</b></a></td>
                 <td>{{x.wikipediaSnapshot}}</td>
                 <td>{{x.wikipediaDirector}}</td>
                 <td>{{x.imdbUrl}}</td>
@@ -93,7 +93,7 @@ td, th {
 	app.controller("myCtrl", function($scope) {
 	$scope.Data = getJSON();
 	console.log($scope.Data);
-	$scope.Data = $scope.Data;
+	$scope.Data = $scope.Data.Data;
   			});
 
 

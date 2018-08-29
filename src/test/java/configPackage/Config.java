@@ -68,5 +68,19 @@ public final class Config {
         }
     }
 
+    public int getHTTPThreadCount()
+    {
+        try {
+            int count = Integer.parseInt(getProperty("API.thread.count"));
+            if(count <= 0)
+            {
+                count = 0;
+            }
+            return count;
+        } catch (IOException e) {
+            return 0;
+        }
+    }
+
 
 }

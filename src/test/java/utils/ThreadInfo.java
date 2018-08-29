@@ -6,12 +6,13 @@ import driver.MyMobileDriver;
 import org.openqa.selenium.WebDriver;
 
 import java.lang.reflect.Method;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Map;
 
 public class ThreadInfo {
 
+    static int countmobiledrivers = 0;
+    static int countapis = 0;
     ArrayList<Thread> threadlist = new ArrayList<>();
     ArrayList<WebDriver> driverlist = new ArrayList<>();
     ArrayList<String> movielist = new ArrayList<>();
@@ -19,12 +20,12 @@ public class ThreadInfo {
     Method[] methods;
     Map<String, String> movieMap;
     Object classObject;
-    static int countmobiledrivers = 0;
 
 
     public ThreadInfo(Map movieMap) {
         this.movieMap = movieMap;
         countmobiledrivers = new Config().getMobileThreadCount();
+        countapis = new Config().getHTTPThreadCount();
     }
 
     public void startThreads() throws Exception {
@@ -34,13 +35,15 @@ public class ThreadInfo {
     }
 
 
-    void createThread(String moviename, WebDriver driver, boolean isMobile) {
+    void createThread(String moviename, WebDriver driver, boolean isMobile, boolean isHTTP, boolean isWeb) throws Exception {
+
         Do dos = new Do(driver, moviename, movieMap.get(moviename));
-        dos.doMethods(isMobile, classObject, methods);
+        dos.doMethods(isWeb, isHTTP, isMobile, classObject, methods);
         threadlist.add(new Thread(dos));
         driverlist.add(driver);
         movielist.add(moviename);
         Do.add(dos);
+        dos.threadID = getThread(moviename).getId();
     }
 
     void reinitThread(String moviename, WebDriver driver, Do dos) {
@@ -75,20 +78,50 @@ public class ThreadInfo {
         return Do;
     }
 
-    public ThreadInfo doMethods(Object classObject, Method... methods) throws MalformedURLException {
+
+    public ThreadInfo doMethods(Object classObject, Method... methods) throws Exception {
+
         this.methods = methods;
         this.classObject = classObject;
         ArrayList<String> movies = new ArrayList();
         movies.addAll(movieMap.keySet());
-        for (int i = 0; i < movies.size(); i++) {
-            if (countmobiledrivers > 0) {
-                createThread(movies.get(i), new MyMobileDriver().newMobileDriver(), true);
-                countmobiledrivers--;
-            } else {
-                createThread(movies.get(i), new MyChromeDriver().newDriver(), false);
+
+        if(Config.runmode.equals("api"))
+        {
+            for (int i = 0; i < movies.size(); i++) {
+                createThread(movies.get(i), null, false, true, false);
             }
+            return this;
         }
-        return this;
+        else if(Config.runmode.equals("hybrid"))
+        {
+            for (int i = 0; i < movies.size(); i++) {
+                if (countmobiledrivers > 0) {
+                    createThread(movies.get(i), new MyMobileDriver().newMobileDriver(), true, false, false);
+                    countmobiledrivers--;
+                }
+                else if (countapis > 0) {
+                    createThread(movies.get(i), null, false, true, false);
+                    countapis--;
+                }
+                else {
+                    createThread(movies.get(i), new MyChromeDriver().newDriver(), false, false, true);
+                }
+            }
+            return this;
+        }
+        else
+        {
+            for (int i = 0; i < movies.size(); i++) {
+                if (countmobiledrivers > 0) {
+                    createThread(movies.get(i), new MyMobileDriver().newMobileDriver(), true, false, false);
+                    countmobiledrivers--;
+                } else {
+                    createThread(movies.get(i), new MyChromeDriver().newDriver(), false, false, true);
+                }
+            }
+            return this;
+        }
     }
 
     public WebDriver getDriver(String moviename) throws Exception {
@@ -128,7 +161,10 @@ public class ThreadInfo {
 
     public void quitAllDrivers() {
         for (int i = 0; i < driverlist.size(); i++) {
-            driverlist.get(i).quit();
+            if(driverlist.get(i) != null)
+            {
+                driverlist.get(i).quit();
+            }
         }
     }
 
