@@ -1,19 +1,21 @@
 package movies.steps;
 
-import static configPackage.Config.*;
-
-import movies.pages.ThreadPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import movies.pages.ThreadPage;
+import movies.pages.ThreadPage2;
 import utils.ThreadInfo;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
+import static configPackage.Config.runmode;
+
 public class DirectorNamesSteps {
 
+    ThreadInfo threadInfo;
 
 
     @Given("^a list of movie name and urls$")
@@ -23,16 +25,16 @@ public class DirectorNamesSteps {
         Map<String, String> movies = new HashMap<String, String>();
         movies.put("First", "first url");
         movies.put("Second", "second url");
-        ThreadInfo threadInfo = new ThreadInfo(movies);
+        threadInfo = new ThreadInfo(movies);
 
 
         //Step Class & Functions
         Class cls = ThreadPage.class;
         Object obj = cls.newInstance();
-        
-        Method m = cls.getDeclaredMethod("method1");
-        Method m2 = cls.getDeclaredMethod("method2");
-        Method m3 = cls.getDeclaredMethod("method3");
+
+        Method m = cls.getDeclaredMethod("method1", null);
+        Method m2 = cls.getDeclaredMethod("method2", null);
+        Method m3 = cls.getDeclaredMethod("method3", null);
 
 
         threadInfo.doMethods(obj, m, m2, m3).startThreads();
@@ -40,7 +42,16 @@ public class DirectorNamesSteps {
     }
 
     @When("^user tries to compare the director names on wikipedia and imdb$")
-    public void userTriesToCompareTheDirectorNamesOnWikipediaAndImdb(){
+    public void userTriesToCompareTheDirectorNamesOnWikipediaAndImdb() throws Exception {
+
+        Class cls = ThreadPage2.class;
+        Object obj = cls.newInstance();
+
+        Method m = cls.getDeclaredMethod("method1", null);
+        Method m2 = cls.getDeclaredMethod("method2", null);
+        Method m3 = cls.getDeclaredMethod("method3", null);
+
+        threadInfo.setNewMethods(obj, m, m2, m3).startThreads();
 
     }
 
