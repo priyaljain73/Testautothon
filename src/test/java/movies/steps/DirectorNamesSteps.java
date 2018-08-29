@@ -2,6 +2,7 @@ package movies.steps;
 
 import static configPackage.Config.*;
 
+import movies.pages.GoogleSearchPage;
 import movies.pages.ThreadPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -27,12 +28,11 @@ public class DirectorNamesSteps {
 
 
         //Step Class & Functions
-        Class cls = ThreadPage.class;
+        Class cls = GoogleSearchPage.class;
         Object obj = cls.newInstance();
         
-        Method m = cls.getDeclaredMethod("method1");
-        Method m2 = cls.getDeclaredMethod("method2");
-        Method m3 = cls.getDeclaredMethod("method3");
+        Method m = cls.getDeclaredMethod("searchName");
+
 
 
         threadInfo.doMethods(obj, m, m2, m3).startThreads();
