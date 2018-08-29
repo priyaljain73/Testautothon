@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class ImportData {
 
  private static String PATH_OF_FILE = "src/test/java/utils/movie.csv";
-  public static void main(String args[]){
+  public static HashMap<String, String> generateData(){
     try{
       CSVReader reader = new CSVReader(new FileReader(PATH_OF_FILE));
       String [] csvCell;
@@ -34,12 +34,16 @@ public class ImportData {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.navigate().to("https://www.google.co.in/");
-        driver.findElement(By.id("lst-ib")).sendKeys("movie:"+movieName+" wikipedia");
+        driver.findElement(By.id("lst-ib")).sendKeys("movie:"+movieName+" wikipedia page");
         driver.findElement(By.name("btnK")).sendKeys(Keys.ENTER);
-        WebElement webElement = driver.findElements(By.xpath("//*[contains (@href,'en.wikipedia.org/wiki/')]")).get(0);
+        WebElement webElement = driver.findElements(By.xpath("//a[starts-with(@href,'https://en.wikipedia.org/wiki')]")).get(0);
         if(webElement !=null){
           webElement.click();
-          hashMap.put(movieName,driver.getCurrentUrl());
+          if(driver.getTitle().contains(movieName)) {
+            hashMap.put(movieName, driver.getCurrentUrl());
+          }
+          else
+            hashMap.put(movieName,"No url found");
         }
         else
           hashMap.put(movieName,"No url found");
@@ -49,9 +53,12 @@ public class ImportData {
       for (Map.Entry<String, String> entry : hashMap.entrySet()) {
         System.out.println(entry.getKey()+" : "+entry.getValue());
       }
+
+      return hashMap;
     }
     catch(Exception e){
       e.printStackTrace();
     }
+    return null;
   }
 }
