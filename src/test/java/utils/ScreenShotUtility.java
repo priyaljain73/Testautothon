@@ -11,7 +11,7 @@ import java.io.IOException;
 public class ScreenShotUtility {
 
     public static void takeScreenShot(WebDriver driver, String fileName) throws IOException {
-        String path = null;
+        String path;
 
         File directory = new File("src/test/java/report");
         if (!directory.exists()) {
