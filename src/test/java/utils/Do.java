@@ -14,8 +14,8 @@ public class Do implements Runnable {
     public Object classObject;
     public String moviename;
     public String wikirurls;
-    public String wikiScreenShot;
-    public String imdbScreenShot;
+    public String wikiScreenShot = "imageNotAvailable.png";
+    public String imdbScreenShot = "imageNotAvailable.png";
     public String[] wikidirectornames;
     public String imdburl;
     public String[] imdbdirectornames;
