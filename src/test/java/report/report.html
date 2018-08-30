@@ -63,10 +63,10 @@ td, th {
                 <td>{{x.movieID}}</td>
                 <td>{{x.movieName}}</td>
                 <td><a href={{x.wikipediaUrl}}><b>{{x.movieName}}</b></a></td>
-                <td>{{x.wikipediaSnapshot}}</td>
+                <td><a href={{x.wikipediaSnapshot}}><img src={{x.wikipediaSnapshot}} height='80' width='120'/></a></td>
                 <td>{{x.wikipediaDirector}}</td>
                 <td>{{x.imdbUrl}}</td>
-                <td>{{x.imdbSnapshot}}</td>
+                <td><a href={{x.imdbSnapshot}}><img src={{x.imdbSnapshot}} height='80' width='120'/></a></td>
                 <td>{{x.imdbDirector}}</td>
                 <td>{{x.difference}}</td>
                 <td>{{x.threadID}}</td>
@@ -77,7 +77,7 @@ td, th {
             </thead>
         </table>
     </div>
-
+    
 
     <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
