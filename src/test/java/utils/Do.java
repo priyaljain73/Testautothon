@@ -14,6 +14,8 @@ public class Do implements Runnable {
     public Object classObject;
     public String moviename;
     public String wikirurls;
+    public String wikiScreenShot;
+    public String imdbScreenShot;
     public String[] wikidirectornames;
     public String imdburl;
     public String[] imdbdirectornames;
@@ -26,6 +28,7 @@ public class Do implements Runnable {
     public boolean isMobile;
     public boolean isHTTP;
     public boolean isWeb;
+
     boolean isFirstCall = true;
 
 

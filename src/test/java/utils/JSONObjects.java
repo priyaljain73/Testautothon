@@ -23,13 +23,14 @@ public class JSONObjects {
             moviesData.put("movieID", (i+1));
             moviesData.put("movieName", dos.moviename);
             moviesData.put("wikipediaUrl", dos.wikirurls);
-            moviesData.put("wikipediaSnapshot", "null");
+            moviesData.put("wikipediaSnapshot", dos.wikiScreenShot);
             moviesData.put("wikipediaDirector", getDirectorsName(dos.wikidirectornames));
             moviesData.put("imdbUrl", dos.imdburl);
-            moviesData.put("imdbSnapshot", (i+1));
+            moviesData.put("imdbSnapshot", dos.imdbScreenShot);
             moviesData.put("imdbDirector", getDirectorsName(dos.imdbdirectornames));
             moviesData.put("difference", getNotFound(dos.notFound));
             moviesData.put("threadID", dos.threadID);
+
 
             if(dos.isMobile)
             {
@@ -43,7 +44,7 @@ public class JSONObjects {
             {
                 moviesData.put("platformName", "Web");
             }
-            
+
             moviesData.put("startTime",dos.startTime );
             moviesData.put("endTime",dos.endTime );
             if(getNotFound(dos.notFound).equals("NA"))
