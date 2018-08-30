@@ -67,7 +67,7 @@ public class WikiIMDbPage extends PageObject {
             WebDriver driver = threadInfo.getDriver(movie);
 
             //takeScreenShotStart
-            String imdbImageName = threadInfo.getDo(movie).moviename + "_imdb";
+            String imdbImageName = threadInfo.getDo(movie).moviename + "_imdb.png";
             takeScreenShot(driver, imdbImageName);
             threadInfo.getDo(movie).imdbScreenShot = imdbImageName;
             //takeScreenShotEnd
