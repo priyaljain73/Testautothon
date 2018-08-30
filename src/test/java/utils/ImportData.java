@@ -39,7 +39,7 @@ public class ImportData {
           movieName = csvCell[0];
         System.out.println("----moviename--" + movieName);
         ChromeOptions chromeOptions = new ChromeOptions();
-       // chromeOptions.addArguments("headless");
+        chromeOptions.addArguments("headless");
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -72,9 +72,6 @@ public class ImportData {
     }
     catch (Exception e){
     }
-    for (Map.Entry<String, String> entry : hashMap.entrySet()) {
-      System.out.println(entry.getKey() + " : " + entry.getValue());
-    }
     return hashMap;
   }
 
@@ -86,8 +83,5 @@ public class ImportData {
     return i;
   }
 
-    public static void main(String[] args) {
-    generateData();
-  }
 }
 

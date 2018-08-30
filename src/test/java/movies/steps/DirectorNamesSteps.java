@@ -35,16 +35,11 @@ public class DirectorNamesSteps {
     @Given("^a list of movie name and urls$")
     public void aListOfMovieNameAndUrls() throws Exception {
 
-        HashMap<String, String> movies = ImportData.generateData();
-
-        //-------
-
-       // HashMap<String, String> movies = new HashMap<>();
-       // movies.put("The Avengers","https://en.wikipedia.org/wiki/The_Avengers_(2012_film)");
-         //      movies.put("The Godfather","https://en.wikipedia.org/wiki/The_Godfather");
-
-        //--------
-
+      System.out.println("---inside given---");
+      HashMap<String, String> movies = ImportData.generateData();
+      for (Map.Entry<String, String> entry : movies.entrySet()) {
+        System.out.println(entry.getKey() + " : " + entry.getValue());
+      }
 
         System.out.println("current run mode" + runmode);
 
@@ -54,10 +49,21 @@ public class DirectorNamesSteps {
         params[0] = String.class;
         params[1] = String.class;
 
-        //Step Class & Functions
-        Class cls = WikiIMDbPage.class;
-        Object obj = cls.newInstance();
+      Class cls;
+      Object obj;
 
+        //Step Class & Functions
+
+        if(runmode.equals("api"))
+        {
+          cls = DirectorNameStepsImpl.class;
+          obj = cls.newInstance();
+        }
+        else
+        {
+          cls = WikiIMDbPage.class;
+          obj = cls.newInstance();
+        }
 
         Method m = cls.getDeclaredMethod("extractDataFromWiki", params);
 
@@ -75,11 +81,24 @@ public class DirectorNamesSteps {
         params[0] = String.class;
         params[1] = String.class;
 
-        //Step Class & Functions
-        Class cls = WikiIMDbPage.class;
-        Object obj = cls.newInstance();
+      Class cls;
+      Object obj;
 
-        Method m = cls.getDeclaredMethod("extractDataFromImdb", params);
+      //Step Class & Functions
+
+      if(runmode.equals("api"))
+      {
+        cls = DirectorNameStepsImpl.class;
+        obj = cls.newInstance();
+      }
+      else
+      {
+        cls = WikiIMDbPage.class;
+        obj = cls.newInstance();
+      }
+
+
+      Method m = cls.getDeclaredMethod("extractDataFromImdb", params);
 
         threadInfo.setNewMethods(obj, m).startThreads();
         threadInfo.waitForThreadsToComplete();
