@@ -1,5 +1,8 @@
 package utils;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.openqa.selenium.WebDriver;
 
 import java.lang.reflect.InvocationTargetException;
@@ -22,8 +25,8 @@ public class Do implements Runnable {
     public HashMap<String, Object> anyvalue;
 
     public long threadID = 0;
-    public long startTime = 0;
-    public long endTime = 0;
+    public String startTime;
+    public String endTime;
     public ArrayList<String> notFound;
     public boolean isMobile;
     public boolean isHTTP;
@@ -42,8 +45,10 @@ public class Do implements Runnable {
     @Override
     public void run() {
 
+        DateTimeFormatter dtf = DateTimeFormat.forPattern("MM/dd/yyyy HH:mm:ss");
         if (isFirstCall) {
-            startTime = System.currentTimeMillis();
+            DateTime starttimeraw = new DateTime();
+            startTime = dtf.print(starttimeraw);
             isFirstCall = false;
         }
         for (int i = 0; i < methods.length; i++) {
@@ -55,7 +60,8 @@ public class Do implements Runnable {
                 e.printStackTrace();
             }
         }
-        endTime = System.currentTimeMillis();
+        DateTime endtimeraw = new DateTime();
+        endTime = dtf.print(endtimeraw);
 
     }
 
