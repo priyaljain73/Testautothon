@@ -64,7 +64,7 @@ public final class Config {
             }
             return count;
         } catch (IOException e) {
-            return 1;
+            return 0;
         }
     }
 

@@ -87,7 +87,7 @@ public class JSONObjects {
 
     private String getDirectorsName(String arr[])
     {
-        String director="";
+        String director = "";
         for(int j = 0; j < arr.length; j++)
         {
             if(j == 0)
@@ -110,7 +110,12 @@ public class JSONObjects {
         {
             if(j == 0)
             {
+                director = "Not found ";
                 director = director + arr.get(j);
+            }
+            else if(j == (arr.size() -1))
+            {
+                director = director + "," + arr.get(j) + " in wikipage";
             }
             else
             {

@@ -15,7 +15,7 @@ public class MyMobileDriver {
 
     public MobileDriver newMobileDriver() throws MalformedURLException {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.0");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.0.0");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Xiaomi Mi1");
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
         String serverUrl = "http://0.0.0.0:4723/wd/hub";

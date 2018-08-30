@@ -121,11 +121,11 @@ public class DirectorNamesSteps {
             int count = 0;
             boolean found = false;
             ArrayList<String> notfound = new ArrayList<>();
-            for (int j = 0; j < imdbDirectorNamesSize; j++) {
-                for (int k = 0; k < wikiDirectorNamesSize; k++) {
-                    System.out.println("Expected: "+threadInfo.getDo().get(i).imdbdirectornames[j]);
-                    System.out.println("Actual: "+threadInfo.getDo().get(i).wikidirectornames[k]);
-                    if (threadInfo.getDo().get(i).imdbdirectornames[j].equalsIgnoreCase(threadInfo.getDo().get(i).wikidirectornames[k]))
+            for (int j = 0; j < wikiDirectorNamesSize; j++) {
+                for (int k = 0; k < imdbDirectorNamesSize; k++) {
+                    System.out.println("Actual: "+threadInfo.getDo().get(i).imdbdirectornames[k]);
+                    System.out.println("Expected: "+threadInfo.getDo().get(i).wikidirectornames[j]);
+                    if (threadInfo.getDo().get(i).imdbdirectornames[k].equalsIgnoreCase(threadInfo.getDo().get(i).wikidirectornames[j]))
                     {
                         found = true;
                         count++;
@@ -134,8 +134,8 @@ public class DirectorNamesSteps {
                 }
                 if(!found)
                 {
-                    notfound.add(threadInfo.getDo().get(i).imdbdirectornames[j]);
-                    System.out.println("Could not find " + threadInfo.getDo().get(i).imdbdirectornames[j]);
+                    notfound.add(threadInfo.getDo().get(i).wikidirectornames[j]);
+                    System.out.println("Could not find " + threadInfo.getDo().get(i).wikidirectornames[j]);
                 }
             }
 
