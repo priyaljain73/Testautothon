@@ -40,7 +40,7 @@ public final class Config {
         Properties prop = new Properties();
         prop.load(propertyfileinputstream);
 
-        if(prop.contains(keyname))
+        if(prop.containsKey(keyname))
         {
             String p = prop.getProperty(keyname).trim();
             propertyfileinputstream.close();
@@ -64,7 +64,7 @@ public final class Config {
             }
             return count;
         } catch (IOException e) {
-            return 0;
+            return 1;
         }
     }
 

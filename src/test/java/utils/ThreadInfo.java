@@ -2,6 +2,7 @@ package utils;
 
 import configPackage.Config;
 import driver.MyChromeDriver;
+import driver.MyGridDriver;
 import driver.MyMobileDriver;
 import org.openqa.selenium.WebDriver;
 
