@@ -1,7 +1,16 @@
 # Testautothon 2018 (STeP-IN Summit 2018)
-This repo contains the testautothon step-in 2018 summit challenge solution.My team has won this hackathon.
+This repo contains the testautothon step-in 2018 summit challenge solution.
 
-The problem is as stated below :
+My team from Coviam Tech has won this hackathon.
+
+Team Members:
+- [Kumar Abhinav](https://github.com/kabhinav2608)
+- [Priyal Jain](https://github.com/priyaljain73)
+- [Ravi Beck]()
+- [Sajeel](https://github.com/sajeelaafaq1)
+- [Viswa]()
+
+The problem is as stated below:
 
 ###Test Flow:
 1. Google Search for 20 movies listed in Reference by movie name.
